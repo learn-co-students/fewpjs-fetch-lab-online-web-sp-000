@@ -1,5 +1,9 @@
 function fetchBooks() {
 
+  return fetch('https://anapioficeandfire.com/api/books') // call on the api or place to pull data
+    .then(response => response.json()) // turn data retrieved into json once u get something back
+    .then(json => renderBooks(json)) // do something with the json
+
 }
 
 function renderBooks(json) {
@@ -14,3 +18,4 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
