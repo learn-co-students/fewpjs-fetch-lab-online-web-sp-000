@@ -1,8 +1,15 @@
-function fetchBooks() {
+document.addEventListener('DOMContentLoaded', function () {
+  fetchBooks()
+})
 
+const fetchBooks = () => {
+  console.log('get books')
+  return fetch('https://anapioficeandfire.com/api/books')
+    .then(r => r.json())
+    .then(json => renderBooks(json))
 }
 
-function renderBooks(json) {
+const renderBooks = (json) => {
   const main = document.querySelector('main')
   json.forEach(book => {
     const h2 = document.createElement('h2')
@@ -10,7 +17,3 @@ function renderBooks(json) {
     main.appendChild(h2)
   })
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks()
-})
