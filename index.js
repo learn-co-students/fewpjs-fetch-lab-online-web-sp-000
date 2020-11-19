@@ -1,5 +1,8 @@
 function fetchBooks() {
-
+  // the return on the fetch is specifically to get the tests of this lab to pass only.
+  return fetch('https://anapioficeandfire.com/api/books')
+    .then(resp => resp.json())
+    .then(json => renderBooks(json));
 }
 
 function renderBooks(json) {
