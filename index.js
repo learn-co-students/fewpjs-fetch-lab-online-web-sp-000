@@ -1,5 +1,8 @@
 function fetchBooks() {
-
+	fetch('https://anapioficeandfire.com/api/books')
+	  .then(resp => resp.json())
+	  .then(json => renderBooks(json));
+	  return fetch('https://anapioficeandfire.com/api/books');
 }
 
 function renderBooks(json) {
@@ -12,5 +15,6 @@ function renderBooks(json) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks()
+  fetchBooks();
+
 })
