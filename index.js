@@ -16,13 +16,3 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
-
-// The 5th book in the series
-function bookFive(json) {
-  json[4].name
-}
-
-// The 1031st character in the series
-
-// The total number of pages of all the books
-
