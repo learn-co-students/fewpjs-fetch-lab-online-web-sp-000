@@ -1,5 +1,9 @@
-function fetchBooks() {
+const gameOfThrones = "https://anapioficeandfire.com/api/books"
 
+function fetchBooks() {
+  return fetch("https://anapioficeandfire.com/api/books")
+    .then(resp => resp.json())
+    .then(json => renderBooks(json));
 }
 
 function renderBooks(json) {
@@ -11,6 +15,10 @@ function renderBooks(json) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks()
+document.addEventListener('DOMContentLoaded', function () {
+  fetchBooks();
 })
+
+function getPosts() {
+
+}
