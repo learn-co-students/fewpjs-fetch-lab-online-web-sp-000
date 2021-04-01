@@ -1,6 +1,6 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  return fetch('https://anapioficeandfire.com/api/books');
+
 }
 
 function renderBooks(books) {
@@ -13,5 +13,17 @@ function renderBooks(books) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks();
+  fetchBooks()
+  .then(resp => resp.json())
+  .then(json => renderBooks(json)
+    )
 });
+
+
+// fetch('https://anapioficeandfire.com/api/books')
+//   .then(resp => resp.json())
+//   .then(json => {
+//     let sumOfPages = 0;
+//     json.forEach((book, relatedHash) => sumOfPages += parseInt(relatedHash["numberOfPages"], 10))
+//     console.log(sumOfPages);
+// });
