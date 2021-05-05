@@ -20,8 +20,3 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
-
-
-function myFunction(args) {
-  console.log('hello world')
-}
